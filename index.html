@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronicles of Eldrath - RPG Fantasy</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/character-creation.css">
+    <link rel="stylesheet" href="styles/game-ui.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Schermata di Benvenuto -->
+        <div id="welcome-screen" class="screen active">
+            <div class="welcome-background">
+                <img src="sfondo/sfondo.png" alt="Sfondo Eldrath" class="background-image">
+            </div>
+            <div class="welcome-content">
+                <h1 class="game-title">Chronicles of Eldrath</h1>
+                <p class="game-subtitle">Un viaggio epico attraverso i regni di Eldrath</p>
+                <div class="welcome-buttons">
+                    <button id="new-game-btn" class="btn-primary">Nuova Partita</button>
+                    <button id="load-game-btn" class="btn-secondary">Carica Partita</button>
+                    <button id="settings-btn" class="btn-secondary">Impostazioni</button>
+                </div>
+                
+                <!-- Sistema Audio Automatico -->
+                <div class="audio-status">
+                    <span class="music-indicator">🎵 Musica Fantasy Attiva</span>
+                </div>
+            </div>
+            <div class="background-animation">
+                <div class="floating-particles"></div>
+            </div>
+        </div>
+
+        <!-- Schermata di Creazione Personaggio -->
+        <div id="character-creation" class="screen">
+            <div class="creation-header">
+                <h2>Creazione del Personaggio</h2>
+                <button id="back-to-welcome" class="btn-back">← Indietro</button>
+            </div>
+            
+            <div class="creation-content">
+                <div class="character-preview">
+                    <div class="character-sprite" id="character-sprite">
+                        <div class="character-image"></div>
+                    </div>
+                    <div class="character-info">
+                        <input type="text" id="character-name" placeholder="Nome del personaggio" maxlength="20">
+                        <div class="gender-selection">
+                            <label><input type="radio" name="gender" value="male" checked> Uomo</label>
+                            <label><input type="radio" name="gender" value="female"> Donna</label>
+                        </div>
+                        <div class="race-selection">
+                            <label><input type="radio" name="race" value="human" checked> Umano</label>
+                            <label><input type="radio" name="race" value="elf"> Elfo</label>
+                            <label><input type="radio" name="race" value="dwarf"> Nano</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="class-selection">
+                    <h3>Scegli la tua Classe</h3>
+                    <div class="class-options">
+                        <div class="class-option" data-class="mage">
+                            <div class="class-icon">
+                                <img src="avatar/mago.png" alt="Mago" class="class-avatar">
+                            </div>
+                            <h4>Mago</h4>
+                            <p>Incantesimi elementali e controllo</p>
+                            <div class="class-stats">
+                                <span>INT: 18</span>
+                                <span>FOR: 8</span>
+                                <span>AGI: 12</span>
+                                <span>CAR: 14</span>
+                            </div>
+                        </div>
+                        <div class="class-option" data-class="archer">
+                            <div class="class-icon">
+                                <img src="avatar/arcere.png" alt="Arciere" class="class-avatar">
+                            </div>
+                            <h4>Arciere</h4>
+                            <p>Attacco a distanza e furtività</p>
+                            <div class="class-stats">
+                                <span>INT: 12</span>
+                                <span>FOR: 10</span>
+                                <span>AGI: 18</span>
+                                <span>CAR: 12</span>
+                            </div>
+                        </div>
+                        <div class="class-option" data-class="knight">
+                            <div class="class-icon">
+                                <img src="avatar/cavaliere.png" alt="Cavaliere" class="class-avatar">
+                            </div>
+                            <h4>Cavaliere</h4>
+                            <p>Combattimento corpo a corpo e difesa</p>
+                            <div class="class-stats">
+                                <span>INT: 10</span>
+                                <span>FOR: 18</span>
+                                <span>AGI: 8</span>
+                                <span>CAR: 16</span>
+                            </div>
+                        </div>
+                        <div class="class-option" data-class="valkyrie">
+                            <div class="class-icon">
+                                <img src="avatar/valkiria.png" alt="Valkiria" class="class-avatar">
+                            </div>
+                            <h4>Valkiria</h4>
+                            <p>Guerriera mistica e supporto</p>
+                            <div class="class-stats">
+                                <span>INT: 14</span>
+                                <span>FOR: 14</span>
+                                <span>AGI: 16</span>
+                                <span>CAR: 18</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="difficulty-selection">
+                    <h3>Livello di Difficoltà</h3>
+                    <div class="difficulty-options">
+                        <label class="difficulty-option">
+                            <input type="radio" name="difficulty" value="easy" checked>
+                            <span class="difficulty-label">Facile</span>
+                            <span class="difficulty-desc">Per esplorazione e narrazione</span>
+                        </label>
+                        <label class="difficulty-option">
+                            <input type="radio" name="difficulty" value="normal">
+                            <span class="difficulty-label">Normale</span>
+                            <span class="difficulty-desc">Bilanciato per tutti</span>
+                        </label>
+                        <label class="difficulty-option">
+                            <input type="radio" name="difficulty" value="extreme">
+                            <span class="difficulty-label">Estrema</span>
+                            <span class="difficulty-desc">IA avanzata, risorse limitate</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button id="start-game-btn" class="btn-primary" disabled>Inizia l'Avventura</button>
+            </div>
+        </div>
+
+        <!-- Schermata di Gioco Principale -->
+        <div id="game-screen" class="screen">
+            <canvas id="game-canvas"></canvas>
+            
+            <!-- Interfaccia di Gioco -->
+            <div class="game-ui">
+                <!-- Barra Superiore -->
+                <div class="top-bar">
+                    <div class="character-portrait">
+                        <img id="portrait-img" src="avatar/mago.png" alt="Portrait" class="character-portrait-img">
+                        <div class="level-indicator">Liv. <span id="level-display">1</span></div>
+                    </div>
+                    
+                    <div class="status-bars">
+                        <div class="status-bar health">
+                            <div class="bar-fill" id="health-fill"></div>
+                            <span class="bar-text">HP: <span id="health-text">100/100</span></span>
+                        </div>
+                        <div class="status-bar mana">
+                            <div class="bar-fill" id="mana-fill"></div>
+                            <span class="bar-text">MP: <span id="mana-text">100/100</span></span>
+                        </div>
+                        <div class="status-bar stamina">
+                            <div class="bar-fill" id="stamina-fill"></div>
+                            <span class="bar-text">ST: <span id="stamina-text">100/100</span></span>
+                        </div>
+                    </div>
+                    
+                    <div class="game-controls">
+                        <button id="inventory-btn" class="ui-btn">📦</button>
+                        <button id="map-btn" class="ui-btn">🗺️</button>
+                        <button id="menu-btn" class="ui-btn">⚙️</button>
+                    </div>
+                </div>
+
+                <!-- Barra Inferiore -->
+                <div class="bottom-bar">
+                    <div class="weapon-info">
+                        <div class="weapon-icon" id="weapon-icon">⚔️</div>
+                        <div class="weapon-stats">
+                            <div class="weapon-name" id="weapon-name">Spada Base</div>
+                            <div class="weapon-damage" id="weapon-damage">Danno: 15-25</div>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button id="attack-btn" class="action-btn">⚔️ Attacco</button>
+                        <button id="magic-btn" class="action-btn">🔮 Magia</button>
+                        <button id="special-btn" class="action-btn">⭐ Speciale</button>
+                        <button id="interact-btn" class="action-btn">👐 Interagisci</button>
+                    </div>
+                    
+                    <div class="inventory-quick">
+                        <div class="quick-slot" id="quick-slot-1">💊</div>
+                        <div class="quick-slot" id="quick-slot-2">🧪</div>
+                        <div class="quick-slot" id="quick-slot-3">⚡</div>
+                    </div>
+                </div>
+
+                <!-- Mini-mappa -->
+                <div class="mini-map" id="mini-map">
+                    <div class="map-title">Mappa</div>
+                    <div class="map-content">
+                        <canvas id="map-canvas" width="200" height="150"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inventario -->
+            <div id="inventory-panel" class="panel hidden">
+                <div class="panel-header">
+                    <h3>Inventario</h3>
+                    <button class="close-btn" id="close-inventory">×</button>
+                </div>
+                <div class="inventory-content">
+                    <div class="inventory-tabs">
+                        <button class="tab-btn active" data-tab="weapons">Armi</button>
+                        <button class="tab-btn" data-tab="armor">Armature</button>
+                        <button class="tab-btn" data-tab="potions">Pozioni</button>
+                        <button class="tab-btn" data-tab="materials">Materiali</button>
+                    </div>
+                    <div class="inventory-grid" id="inventory-grid"></div>
+                </div>
+            </div>
+
+            <!-- Menu Principale -->
+            <div id="main-menu" class="panel hidden">
+                <div class="menu-content">
+                    <button id="resume-btn" class="menu-btn">Riprendi</button>
+                    <button id="save-btn" class="menu-btn">Salva</button>
+                    <button id="load-btn" class="menu-btn">Carica</button>
+                    <button id="settings-btn-game" class="menu-btn">Impostazioni</button>
+                    <button id="quit-btn" class="menu-btn">Esci</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Schermata di Caricamento -->
+        <div id="loading-screen" class="screen">
+            <div class="loading-content">
+                <h2>Caricamento...</h2>
+                <div class="loading-bar">
+                    <div class="loading-fill" id="loading-fill"></div>
+                </div>
+                <p id="loading-text">Inizializzazione del mondo di Eldrath...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/classes.js"></script>
+    <script src="js/characters.js"></script>
+    <script src="js/enemies.js"></script>
+    <script src="js/world.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/audio-manager.js"></script>
+    <script src="assets/assets-config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

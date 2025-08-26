@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sfondo trasparente -->
+  <rect width="64" height="64" fill="none"/>
+  
+  <!-- Corpo del drago -->
+  <ellipse cx="32" cy="45" rx="15" ry="20" fill="#8b0000"/>
+  
+  <!-- Testa del drago -->
+  <ellipse cx="32" cy="20" rx="12" ry="15" fill="#8b0000"/>
+  
+  <!-- Muso -->
+  <ellipse cx="32" cy="25" rx="8" ry="6" fill="#dc143c"/>
+  
+  <!-- Occhi fiammeggianti -->
+  <circle cx="26" cy="18" r="3" fill="#ff4500"/>
+  <circle cx="38" cy="18" r="3" fill="#ff4500"/>
+  <circle cx="26" cy="18" r="1.5" fill="#ffff00"/>
+  <circle cx="38" cy="18" r="1.5" fill="#ffff00"/>
+  
+  <!-- Narici -->
+  <circle cx="30" cy="22" r="1" fill="#000"/>
+  <circle cx="34" cy="22" r="1" fill="#000"/>
+  
+  <!-- Bocca con denti -->
+  <path d="M28 26 Q32 30 36 26" stroke="#000" stroke-width="2" fill="none"/>
+  <polygon points="28,26 26,24 30,24" fill="#ffffff"/>
+  <polygon points="36,26 34,24 38,24" fill="#ffffff"/>
+  
+  <!-- Corna -->
+  <path d="M24 12 Q22 8 20 12 Q22 16 24 12" fill="#654321"/>
+  <path d="M40 12 Q42 8 44 12 Q42 16 40 12" fill="#654321"/>
+  
+  <!-- Collo -->
+  <ellipse cx="32" cy="35" rx="10" ry="8" fill="#8b0000"/>
+  
+  <!-- Braccia con artigli -->
+  <ellipse cx="18" cy="35" rx="6" ry="15" fill="#8b0000"/>
+  <ellipse cx="46" cy="35" rx="6" ry="15" fill="#8b0000"/>
+  
+  <!-- Artigli -->
+  <polygon points="18,35 16,33 20,33" fill="#ffffff"/>
+  <polygon points="48,35 46,33 50,33" fill="#ffffff"/>
+  
+  <!-- Ali -->
+  <ellipse cx="15" cy="30" rx="8" ry="12" fill="#dc143c" opacity="0.8"/>
+  <ellipse cx="49" cy="30" rx="8" ry="12" fill="#dc143c" opacity="0.8"/>
+  
+  <!-- Coda -->
+  <path d="M32 55 Q40 58 45 55 Q42 52 35 52" fill="#8b0000"/>
+  <polygon points="45,55 47,53 47,57" fill="#dc143c"/>
+  
+  <!-- Gambe -->
+  <ellipse cx="26" cy="55" rx="5" ry="8" fill="#8b0000"/>
+  <ellipse cx="38" cy="55" rx="5" ry="8" fill="#8b0000"/>
+  
+  <!-- Piedi con artigli -->
+  <ellipse cx="26" cy="60" rx="4" ry="3" fill="#654321"/>
+  <ellipse cx="38" cy="60" rx="4" ry="3" fill="#654321"/>
+  
+  <!-- Squame decorative -->
+  <circle cx="32" cy="40" r="2" fill="#dc143c"/>
+  <circle cx="28" cy="45" r="1.5" fill="#dc143c"/>
+  <circle cx="36" cy="45" r="1.5" fill="#dc143c"/>
+  <circle cx="32" cy="50" r="1.5" fill="#dc143c"/>
+  
+  <!-- Fuoco dalla bocca -->
+  <path d="M32 26 Q36 20 40 26 Q36 30 32 26" fill="#ff4500" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.4;0.8" dur="1s" repeatCount="indefinite"/>
+  </path>
+</svg>

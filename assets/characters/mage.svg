@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sfondo trasparente -->
+  <rect width="64" height="64" fill="none"/>
+  
+  <!-- Corpo del mago -->
+  <ellipse cx="32" cy="45" rx="12" ry="18" fill="#4a90e2"/>
+  
+  <!-- Testa -->
+  <circle cx="32" cy="25" r="12" fill="#ffdbac"/>
+  
+  <!-- Cappello da mago -->
+  <path d="M20 20 Q32 5 44 20 L40 25 Q32 15 24 25 Z" fill="#8b4513"/>
+  <ellipse cx="32" cy="22" rx="8" ry="3" fill="#654321"/>
+  
+  <!-- Occhi -->
+  <circle cx="28" cy="22" r="2" fill="#000"/>
+  <circle cx="36" cy="22" r="2" fill="#000"/>
+  
+  <!-- Bocca -->
+  <path d="M28 30 Q32 32 36 30" stroke="#000" stroke-width="1" fill="none"/>
+  
+  <!-- Barba -->
+  <path d="M26 28 Q32 35 38 28" fill="#8b4513"/>
+  
+  <!-- Braccia -->
+  <ellipse cx="20" cy="40" rx="4" ry="12" fill="#4a90e2"/>
+  <ellipse cx="44" cy="40" rx="4" ry="12" fill="#4a90e2"/>
+  
+  <!-- Mani -->
+  <circle cx="18" cy="48" r="3" fill="#ffdbac"/>
+  <circle cx="46" cy="48" r="3" fill="#ffdbac"/>
+  
+  <!-- Bacchetta magica -->
+  <line x1="46" y1="48" x2="56" y2="38" stroke="#8b4513" stroke-width="2"/>
+  <circle cx="56" cy="38" r="3" fill="#ffd700"/>
+  
+  <!-- Effetti magici -->
+  <circle cx="58" cy="36" r="2" fill="#ff69b4" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="60" cy="40" r="1.5" fill="#00ffff" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.1;0.6" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Toga -->
+  <path d="M20 45 Q32 55 44 45 L42 63 L22 63 Z" fill="#2e5aa0"/>
+  
+  <!-- Cintura -->
+  <rect x="26" y="50" width="12" height="3" fill="#8b4513"/>
+  
+  <!-- Gemma sulla cintura -->
+  <circle cx="32" cy="51.5" r="2" fill="#ffd700"/>
+</svg>

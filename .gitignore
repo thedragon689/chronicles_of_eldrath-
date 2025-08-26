@@ -1,0 +1,43 @@
+# Chronicles of Eldrath - Git Ignore
+
+# File di sistema
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# File temporanei
+*.tmp
+*.temp
+*.log
+
+# File di build
+dist/
+build/
+node_modules/
+
+# File di configurazione locale
+.env
+.env.local
+.env.production
+
+# File di cache
+.cache/
+.parcel-cache/
+
+# File di IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# File di backup
+*.bak
+*.backup
+
+# File di test temporanei
+test-*.html
+debug-*.html
+
+# File di documentazione temporanei
+CORREZIONE_URGENTE.md
