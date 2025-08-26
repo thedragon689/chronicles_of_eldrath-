@@ -20,10 +20,10 @@ Un gioco RPG fantasy completo con sistema di asset grafici avanzato, personaggi 
 ### Installazione Rapida
 ```bash
 # Clona il repository
-git clone https://github.com/tuousername/chronicles-of-eldrath.git
+git clone https://github.com/thedragon689/chronicles_of_eldrath-.git
 
 # Entra nella directory
-cd chronicles-of-eldrath
+cd chronicles_of_eldrath-
 
 # Avvia server locale (opzionale)
 python3 -m http.server 8000
@@ -63,7 +63,7 @@ open http://localhost:8000/test-assets.html
 ## 🏗️ Architettura
 
 ```
-chronicles-of-eldrath/
+chronicles_of_eldrath-/
 ├── index.html              # Pagina principale
 ├── js/                     # Script JavaScript
 │   ├── main.js            # Inizializzazione
